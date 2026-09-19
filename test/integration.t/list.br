@@ -1,0 +1,20 @@
+def Head(C(x,xs)) = x
+def Tail(C(x,xs)) = xs
+
+def IsEmpty(N()) = True()
+def IsEmpty(C(x,xs)) = False()
+
+def Append(N(),ys) = ys
+def Append(C(x,xs),ys) = C(x,Append(xs,ys))
+
+def Index(Z(),ys) = Head(ys)
+def Index(S(x),C(y,ys)) = Index(x,ys)
+
+def Length(N()) = Z()
+def Length(C(x,xs)) = S(Length(xs))
+
+def MyListA() = C(ItemA(),C(ItemB(),C(ItemC(),N())))
+def MyListB() = C(ItemD(),C(ItemE(),N()))
+
+Index(S(S(S(S(Z())))), Append(MyListA(),MyListB()))
+Length(Append(Append(MyListA(),MyListB()),MyListB()))

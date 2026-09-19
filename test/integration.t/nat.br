@@ -1,0 +1,22 @@
+def Add(Z(),y) = y
+def Add(S(x),y) = S(Add(x,y))
+
+def Mult(Z(),y) = Z()
+def Mult(S(x),y) = Add(y,Mult(x,y))
+
+def Pred(Z()) = Z()
+def Pred(S(x)) = x
+
+def Sub(x,Z()) = x
+def Sub(x,S(y)) = Pred(Sub(x,y))
+
+def Exp(x,Z()) = S(Z())
+def Exp(x,S(y)) = Mult(x,Exp(x,y))
+
+def One() = S(Z())
+def Two() = S(S(Z()))
+def Three() = Add(One(),Two())
+
+Add(Two(),Three())
+Mult(Two(),Three())
+Exp(Two(),Three())

@@ -1,0 +1,12 @@
+def And(T(),T()) = T()
+def And(x,y)     = F()
+
+def Not(T()) = F()
+def Not(F()) = T()
+
+def Or(x,y) = Not(And(Not(x),Not(y)))
+
+def If(T(),then,else) = then
+def If(F(),then,else) = else
+
+If(Or(T(),F()), ItemA(), ItemB())

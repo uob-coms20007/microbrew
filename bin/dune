@@ -1,0 +1,4 @@
+(executable
+ (public_name microbrew)
+ (name main)
+ (libraries microbrew unix))
